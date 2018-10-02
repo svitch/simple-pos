@@ -1,0 +1,21 @@
+{
+  "name": "simple-pos",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "Sergey Sklyar",
+  "license": "ISC",
+  "scripts": {
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.0.1",
+    "express": "^4.16.3",
+    "validator": "^10.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  }
+}
