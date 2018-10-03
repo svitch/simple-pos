@@ -8,9 +8,10 @@ const receiveProducts = products => ({
 });
 
 export const getAllProducts = () => dispatch => {
-  axios.get('/goods', { headers: { 'X-Autorization': uuid() } }).then(response => {
-    dispatch(receiveProducts(response.data));
-  });
+  axios
+    .get('/goods', { headers: { 'X-Autorization': uuid() } })
+    .then(response => dispatch(receiveProducts(response.data)))
+    .catch(error => console.log(error.message));
 }
 
 const addToCartUnsafe = productId => ({
@@ -31,10 +32,12 @@ export const checkout = products => (dispatch, getState) => {
     type: types.CHECKOUT_REQUEST
   });
 
-  axios.post('/sell', products).then(() => {
-    dispatch({
-      type: types.CHECKOUT_SUCCESS,
-      cart
-    });
-  });
+  axios
+    .post('/sell', {
+      type: 'SELL',
+      datetime: (new Date()).toISOString(),
+      goods_list: products
+    })
+    .then(() => dispatch({ type: types.CHECKOUT_SUCCESS, cart }))
+    .catch(error => console.log(error.message));
 }

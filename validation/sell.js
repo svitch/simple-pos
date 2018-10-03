@@ -13,13 +13,13 @@ module.exports = function validateSell(data) {
   if (Validator.isEmpty(data.type))
     errors.type = 'Не указан тип запроса';
 
-  if (!Validator.isRFC3339(data.datetime))
+   if (!Validator.isISO8601(data.datetime))
     errors.datetime = 'Неверный формат даты запроса';
 
   if (Validator.isEmpty(data.datetime))
     errors.datetime = 'Не указана дата запроса';
 
-  if (Validator.isEmpty(data.goods_list))
+  if (data.goods_list.length === 0)
     errors.goods_list = 'В запросе нет товаров';
 
   return {
