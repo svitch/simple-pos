@@ -25,5 +25,5 @@ module.exports = function validateSell(data) {
   return {
     errors,
     isValid: isEmpty(errors)
-  };
-};
+  }
+}

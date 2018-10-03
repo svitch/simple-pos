@@ -21,32 +21,34 @@ const goods = [
     'uuid': '3a9e3220-f20a-4f59-a8dd-a3f401859592',
     'name': 'Сыр Пармезан',
     'quantity': 10,
-    'price': 580.5
+    'price': 580
   },
   {
     'uuid': '57ec7583-144b-4798-842a-0e14f5499e2d',
     'name': 'Молоко Бурёнка',
     'quantity': 25,
-    'price': 45.0
+    'price': 45.5
   },
   {
     'uuid': '058d0937-da5a-4b9c-95ee-0aa37af724ca',
     'name': 'Сосиски Петрович',
     'quantity': 40,
-    'price': 120.0
+    'price': 120
   }
 ];
 
 // Endpoints
-app.get('/goods', (req, res) => res.json(goods));
+app.get('/goods', (req, res) => {
+  console.log(req.headers['x-autorization']);
+  res.json(goods);
+});
 app.post('/sell', (req, res) => {
-    const { errors, isValid } = validateSell(req.body);
+  const { errors, isValid } = validateSell(req.body);
 
-    if (!isValid) return res.status(400).json({ msg: errors });
+  if (!isValid) return res.status(400).json({ msg: errors });
 
-    return res.status(200).json({ msg: '' });
-  }
-);
+  return res.status(200).json({ msg: '' });
+});
 
 // Initialize server
 const port = process.env.PORT || 5000;
