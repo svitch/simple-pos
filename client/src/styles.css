@@ -1,0 +1,152 @@
+#page {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-size: .875rem;
+  min-height: 100vh;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#header {
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
+
+#page-logo {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.cart-title {
+  color: #ff9900;
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: .25rem;
+  text-transform: uppercase;
+}
+
+.cart-quantity,
+.cart-price {
+  font-weight: 600;
+}
+
+#main {
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.page-heading {
+  -ms-flex-align: center;
+  align-items: center;
+  background-color: #cc9977;
+  background-image: url('/images/agriculture.jpg');
+  background-position: 50%;
+  background-size: cover;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, .25);
+  color: rgba(255, 255, 255, .875);
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 5rem;
+  font-weight: 700;
+  min-height: 20rem;
+  text-shadow: 0 2px 0 rgba(0,0,0,.125);
+}
+
+.section {
+  padding-bottom: 2.5rem;
+  padding-top: 2.5rem;
+}
+
+.product-list {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.product-small {
+  background-color: #f9f9f9;
+  background-image: url('/images/agriculture.jpg');
+  background-position: 50%;
+  border-radius: .5rem;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .25);
+  height: 256px;
+  position: relative;
+}
+
+.product-small:before {
+  background-color: #fff;
+  border-radius: .25rem;
+  bottom: .375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .25);
+  content: '';
+  display: block;
+  left: .375rem;
+  position: absolute;
+  right: .375rem;
+  top: .375rem;
+  z-index: 1;
+}
+
+.product-small .card-body {
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  text-align: center;
+  z-index: 2;
+}
+
+.product-name {
+  color: #ff661d;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: .25rem;
+  margin-top: 2.5rem;
+  text-align: center;
+}
+
+.product-price {
+  color: #444444;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.product-stock {
+  border-top: 1px solid #888888;
+  display: inline-block;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem .75rem 0;
+}
+
+.product-button {
+  padding: 1.25rem 2rem;
+  width: 100%;
+}
+
+.product-button .btn,
+.product-button .btn:focus,
+.product-button .btn:hover {
+  background-color: #ff9900 !important;
+  border-color: #ff9900 !important;
+  color: #ffffff;
+  font-size: .75rem;
+  font-weight: 600;
+  padding-left: 2.25rem;
+  padding-right: 2.25rem;
+  text-transform: uppercase;
+}
+
+.product-button .btn:active {
+  background-color: #ff661d !important;
+  border-color: #ff661d !important;
+  color: #ffffff !important;
+}
+
+#footer {
+  color: #444444;
+  padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
+}
